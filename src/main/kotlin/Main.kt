@@ -14,10 +14,10 @@ fun agoToText(
 ): String {
     return when {
         time < MINUTES -> "был(а) только что"
-        time < HOURS && time >= MINUTES -> "был(а) в сети ${minutes(time)} назад"
-        time < DAY && time >= HOURS -> "был(а) в сети ${hours(time)} назад"
-        time < TWO_DAY && time >= DAY -> "был(а) в сети день назад"
-        time < THREE_DAY && time >= TWO_DAY -> "был(а) в сети два дня назад"
+        time in MINUTES until HOURS -> "был(а) в сети ${minutes(time)} назад"
+        time in HOURS until DAY -> "был(а) в сети ${hours(time)} назад"
+        time in DAY until TWO_DAY -> "был(а) в сети день назад"
+        time in TWO_DAY until THREE_DAY -> "был(а) в сети два дня назад"
         else -> "был(а) давно"
     }
 }
