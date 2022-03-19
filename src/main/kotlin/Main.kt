@@ -11,7 +11,9 @@ private const val MIN_COMMISSION_VISA_AND_MIR = 35_00
 
 fun main() {
     val result = payment( currentTransfer = 14_000_00, previousTranslationsPerMonth = 26_000_01)
+    val result2 = payment("Visa", currentTransfer = 4_667_00)
     println(result)
+    println(result2)
 }
 
 fun commission(
